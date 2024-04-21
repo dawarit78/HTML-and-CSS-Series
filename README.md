@@ -1,2 +1,2 @@
-# code-w-mosh
+# HTML & CSS SERIES
 # 
