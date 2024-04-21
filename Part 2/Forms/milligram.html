@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms with Milligram</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+      </div>
+
+      <button type="submit">Register</button>
+      <button type="reset">Clear</button>
+    </form>
+
+    <form class="checkboxes">
+      <div>
+        <input type="checkbox" id="front-end" />
+        <label class="label-inline" for="front-end">Front-end</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="back-end" />
+        <label class="label-inline" for="back-end">Back-end</label>
+      </div>
+    </form>
+
+    <form class="radio-button">
+      <div>
+        <input type="radio" name="membership" id="silver" />
+        <label for="silver" class="label-inline">Silver</label>
+      </div>
+
+      <div>
+        <input type="radio" name="membership" id="gold" />
+        <label for="gold" class="label-inline">Gold</label>
+      </div>
+    </form>
+
+    <form class="sliders">
+      <input type="range" min="0" max="100" value="90" />
+    </form>
+
+    <form class="grouping-related-fields">
+      <fieldset>
+        <legend>Billing Address</legend>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+
+      <section>
+        <h2>Payment</h2>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </section>
+    </form>
+
+    <form class="hidden-fields">
+      <input type="hidden" name="course-id" value="123" />
+    </form>
+
+    <form class="data-validation">
+      <input type="text" required minlength="3" maxlength="10" />
+      <button type="submit">Submit</button>
+
+      <input type="email" required minlength="3" maxlength="10" />
+      <button type="submit">Submit</button>
+
+      <input type="numbers" required min="3" max="10" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <form
+      class="submitting-the-form"
+      action="https://formspree.io/f/xkndrgyp"
+      method="post"
+    >
+      <input type="text" placeholder="Name" name="name" />
+      <input type="text" placeholder="Email" name="email" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

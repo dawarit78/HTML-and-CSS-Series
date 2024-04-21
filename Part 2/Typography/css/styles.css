@@ -1,0 +1,83 @@
+/*embedding fonts 1 way; other way is dirextly linking webfont in html befire any other links*/
+@font-face {
+    font-family: 'opensans';
+    src: url('fonts/open-sans/opensans-regular-webfont.woff2') format('woff2'),
+         url('fonts/open-sans/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'opensans';
+    src: url('fonts/open-sans/opensans-bolditalic-webfont.woff2') format('woff2'),
+         url('fonts/open-sans/opensans-bolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: optional;
+}
+
+html {
+    /*default font size: 16px*/
+    font-size: 62.5%; /*62.5% * 16px = 10px*/;
+}
+
+/*the other fonts not in parentheses are save dfonts in vscode, we can use them on their own or add them after embedded fonts as a fallback option*/
+body {
+    margin: 10px;
+    font-family: 'opensans', Arial, Helvetica, sans-serif;
+    /*use a relative unit for setting font sizes*/
+    font-size: 1rem; /*1 * font size of the root element (html)*/
+    /*verical spacing: line height; using without units will times the number by the font size*/
+    line-height: 1.5;
+    /*horizontal spacing: letter spacing; to control the spacing between letters; don't rem ONLY use px values*/
+    letter-spacing: 1px;
+    /*horizontal spacing: word spacing; to control the spacing between words; don't rem ONLY use px values*/
+    word-spacing: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    /*verical spacing: line height*/
+    margin: 3rem 0 1rem;
+}
+
+p {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1rem;
+    color: #333;
+
+    /*horizontal spacing: Ideal Line Length; the ideal line length is between 50 - 70 characters; ONLY use ch values as used below*/
+    width: 50ch;
+
+    /*FORMATTING TEXT*/
+    text-align: center;
+    text-indent: 1rem;
+    text-decoration: underline;
+    text-transform: capitalize;
+    /*to truncate text, need to define width as seen above, set whitespace to nowrap, overflow to hidden, text-overflow to any desired value*/
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+
+    /*multi column text*/
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 3px dotted #999;
+}
+
+/*system font stack*/
+a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 150%;
+    }
+}

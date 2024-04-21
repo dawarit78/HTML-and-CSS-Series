@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#">Regular (with styles.css)</a>
+    <a href="bootstrap.html">With Bootstrap</a>
+    <a href="milligram.html">With Milligram</a>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+      </div>
+
+      <button type="submit">Register</button>
+      <button type="reset">Clear</button>
+    </form>
+
+    <form class="text-fields">
+      <input type="text" readonly value="..." />
+      <input type="number" maxlength="10" />
+      <input type="password" placeholder="Password" />
+      <input type="date" disabled value="..." />
+      <input type="email" value="codewmosh@gmail.com" />
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </form>
+
+    <form class="data-fields">
+      <input type="text" list="countries" autocomplete="off" />
+      <datalist id="countries">
+        <option>Australia</option>
+        <option>Canada</option>
+        <option>India</option>
+        <option>United States</option>
+      </datalist>
+    </form>
+
+    <form class="dropdown-lists">
+      <select>
+        <optgroup label="Front-end Courses">
+          <option value="1">Select a Course...</option>
+          <option value="2">HTML</option>
+          <option value="3">CSS</option>
+          <option value="4">JavaScript</option>
+        </optgroup>
+
+        <optgroup label="Back-end Courses">
+          <option value="2">Django</option>
+          <option value="3">ASP.net</option>
+          <option value="4">Node.js</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <form class="sliders">
+      <input type="range" min="0" max="100" value="90" />
+    </form>
+
+    <form class="file-inputs">
+      <input type="file" />
+      <input type="file" multiple />
+      <input type="file" accept=".pdf" />
+      <input type="file" accept=".jpg, .png" />
+      <input type="file" multiple accept="image/*, audio/*, video/*" />
+    </form>
+
+    <form class="grouping-related-fields">
+      <fieldset>
+        <legend>Billing Address</legend>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Payment</legend>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </fieldset>
+    </form>
+
+    <form class="hidden-fields">
+      <input type="hidden" name="course-id" value="123" />
+    </form>
+
+    <form class="data-validation">
+      <input type="text" required />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    /*placing items in the center of screen*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: gold;
+    /*Transition*/
+    transition: transform 0.5s linear 1s, background 1s;
+}
+
+/*2D Transformation - can use the following functions individually or in a combination (order matters): rotate(), scale(), skew(), translate()*/
+.box:hover {
+    transform: rotate(15deg) translateY(50px);
+    background: lawngreen;
+}
+
+.box-two {
+    width: 100px;
+    height: 100px;
+    background: dodgerblue;
+}
+
+/*3D Transformation - need to specify perspective() and can use the following functions individually or in a combination (order matters): rotate(), scale(), skew(), translate()*/
+.box-two:hover {
+    transform: perspective(200px) rotateY(50deg);
+    transform-origin: 0 50%;
+}
+
+
+/*Animations*/
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: rotate(45deg);
+        background: tomato;
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.box-three {
+    width: 100px;
+    height: 100px;
+    background: purple;
+    /*must set the following for animation to run*/
+    /*animation-name: pop;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;*/
+}
+
+/*Reusable Animation can also use animate.css in html*/
+.animation-pop {
+    animation-name: pop;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}

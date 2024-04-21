@@ -1,0 +1,196 @@
+*,
+*::before {
+  /*universal selector. inoversal selector for pseudoelements*/
+  box-sizing: border-box;
+}
+
+p {
+  margin: 20px;
+  padding: 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+  padding: 30px;
+  border: 10px solid orange;
+  display: inline-block;
+}
+
+.box::before {
+  content: "hello";
+}
+
+.boxed {
+  /*50vw - 50% of viewport width; 100vh - 100% of viewport height; 50em - 50 * font size of current element, 50rem - 50 * font size of root element (default 16px)*/
+  border: 3px solid gold;
+  width: 50vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+.boxes {
+  border: 3px solid lightgray;
+  position: relative;
+}
+
+.box1 {
+  width: 5rem;
+  height: 5rem;
+}
+
+.box-one {
+  background-color: gold;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+}
+
+.box-two {
+  background-color: tomato;
+  position: relative;
+  right: -4rem;
+  bottom: 2rem;
+  z-index: 8;
+}
+
+.box-three {
+  background-color: dodgerblue;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+}
+
+/*FLOATS - not great to use better to use flexbox and grid*/
+.tweet {
+  /*this would not see the floating article*/
+  border: 3px solid lightseagreen;
+}
+
+.clearfix::after {
+  /*this includes the floating article; note we use CLEARFIX as an additional class to any floating items, and we always have to CLEAR after using floating elements*/
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  float: left;
+  margin-right: 0.5rem;
+}
+
+.clear {
+  clear: both;
+}
+
+/*FLEXBOX*/
+.container {
+  border: 3px solid darkkhaki;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 90vh;
+}
+
+.flexbox {
+  flex-basis: auto;
+  flex-grow: 3;
+  flex-shrink: 1;
+  width: 5rem;
+  height: 5rem;
+  background: gold;
+  margin: 1rem;
+}
+
+.boxx {
+  flex-grow: 2;
+  flex-shrink: 0;
+}
+
+/*GRID*/
+.containers {
+  display: grid;
+  /*3 rows by 2 colums*/
+  /*repeat(row specification) / repeat(column specification)*/
+  /*grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(2, 100px);*/
+  grid-template: 100px auto 100px / 30fr 70fr; /*auto makes the row or column resizable as the window grows or shrinks, fr means fraction of available space*/
+  border: 3px solid lightgray;
+  /*to align individual grid items - justify for horizontal axis, align for vertical axis; default value is stretch*/
+  /*justify-items: center;
+  align-items: center;*/
+
+  /*to align the grid as a whole - justify for horizontal axis, align for vertical axis*/
+  /*justify-content: center;
+  align-content: center;*/
+
+  /*GAP*/
+  row-gap: 10px;
+  column-gap: 10px;
+
+  /*PLACING ITEMS*/
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    ".       footer";
+}
+
+.boxxs {
+  /*width: 5rem;
+  height: 5rem;*/
+  background: gold;
+}
+
+.boxx-one {
+  /*PLACING ITEMS*/
+  grid-column: 1 / span 2; /*start from column 1 and span 2 columns*/
+  grid-row: 2;
+}
+
+.boxx-four {
+  /*short hand of grid column and row but grid-template-area needs to be specified in the .container*/
+  grid-area: footer;
+}
+
+/*HIDDING ELEMENTS*/
+.first {
+  visibility: hidden;
+}
+
+/*RESPONSIVE WEBPAGES - MEDIA QUERIES (Mobile First Approach*/
+.containerz {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxer {
+  background: gold;
+  padding: 1rem;
+}
+
+.boxer:nth-of-type(2) {
+  background: dodgerblue;
+}
+
+/*setting breakpoint*/
+@media screen and (min-width: 600px) {
+  .containerz {
+    flex-direction: row;
+  }
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+  }
+
+  .boxer {
+    padding: 0.5cm;
+  }
+}
