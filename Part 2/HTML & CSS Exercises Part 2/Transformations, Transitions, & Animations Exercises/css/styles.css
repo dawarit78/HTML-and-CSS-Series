@@ -1,0 +1,54 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 3px solid white;
+    margin: 2rem;
+}
+
+.card {
+    max-width: 500px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 30px #f9f9f9;
+    transform: rotate(-5deg);
+}
+
+.card:hover {
+    transform: rotate(0);
+}
+
+.card:hover img{
+    transform: scale(115);
+}
+
+.comment, .info {
+    padding: 1.5rem;
+}
+
+.comment {
+    font-size: 2rem;
+}
+
+.info {
+    display: flex;
+    background: rgb(116,214,144);
+    background: linear-gradient(90deg, rgba(116,214,144,1) 0%, rgba(92,191,187,1) 61%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    align-items: center;
+    font-size: 1.7rem;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Exercises</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+    <script src="https://kit.fontawesome.com/bb7b4bb0a8.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <h1 class="header">Please sign in</h1>
+      <form class="sign-in" action="https://formspree.io/f/mayronzy" method="post">
+        <div>
+            <input class="fields" type="email" placeholder="Email address" name="email" minlength="12" maxlength="30" autofocus/>
+        </div>
+
+        <div>
+            <input class="fields" type="password" placeholder="Password" name="password" minlength="8" maxlength="16"/>
+        </div>
+
+        <div>
+            <input class="fields" type="checkbox" id="remember" />
+            <label class="label-inline" for="remember">Remember me</label>
+        </div>
+
+        <button class="btn" type="submit">Sign In</button>
+        <p>Copyright <i class="fa-regular fa-copyright"></i> 2020</p>
+      </form>
+    </section>
+  </body>
+</html>
